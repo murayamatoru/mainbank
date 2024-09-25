@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link th:href="@{/css/demo.css}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title th:text="取引銀行管理"></title>
+<style>
+        /* grid を使ってヘッダーとフッターはそれぞれに合った高さにし */
+        /* コンテンツは残りの高さ全てを使うようにする */
+    .page {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 96dvh; /* ブラウザの縦スクロールバーを抑止するため　根拠なし */
+    }
+    .main {
+        overflow-y: auto;
+        overflow-x: auto; /* 横スクロールを維持 */
+    }
+    .main_table {
+        height: 300px;
+        width: 900px;
+    }
+    header,
+    footer {
+        padding: 1em;
+        background: #aaa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ここから追加 */
+    table {
+        border-collapse: collapse; /* テーブルの枠線を重ねて表示 */
+        width: 100%; /* テーブル幅を設定（必要に応じて変更） */
+    }
+    th, td {
+        border: 1px solid black; /* セルの枠線を設定 */
+        padding: 8px; /* セル内の余白を設定 */
+        text-align: left; /* テキストを左揃え */
+    }
+</style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <span th:text="${SystemName}"></span>
+    </header>
+    <div class="main">
+        <div class="main_table">
+<table style="border: 1px solid black；">
+<thead style="border: 1px solid black；">
+	<tr>
+	<th>金融機関名</th>
+	<th>金融機関コード</th>
+	<th>口座番号</th>
+	<th>残高</th>
+	</tr>
+</thead>
+<tbody style="border: 1px solid black；">
+	<tr>
+	<td style="border: 1px solid black；">内容1</td>
+	<td style="border: 1px solid black；">内容2</td>
+	<td style="border: 1px solid black；">内容３</td>
+	<td style="border: 1px solid black；">内容４</td>
+	</tr>
+	<tr>
+	<td style="border: 1px solid black；">内容1</td>
+	<td style="border: 1px solid black；">内容2</td>
+	<td style="border: 1px solid black；">内容３</td>
+	<td style="border: 1px solid black；">内容４</td>
+	</tr>
+	<tr>
+	<td style="border: 1px solid black；">内容1</td>
+	<td style="border: 1px solid black；">内容2</td>
+	<td style="border: 1px solid black；">内容３</td>
+	<td style="border: 1px solid black；">内容４</td>
+	</tr>
+	<tr>
+	<td style="border: 1px solid black；">内容1</td>
+	<td style="border: 1px solid black；">内容2</td>
+	<td style="border: 1px solid black；">内容３</td>
+	<td style="border: 1px solid black；">内容４</td>
+	</tr>
+	<tr>
+	<td style="border: 1px solid black；">内容1</td>
+	<td style="border: 1px solid black；">内容2</td>
+	<td style="border: 1px solid black；">内容３</td>
+	<td style="border: 1px solid black；">内容４</td>
+	</tr>
+</tbody>
+</table>
+        </div>
+    </div>
+    <footer>
+        ここはフッターです
+    </footer>
+</div>
+</body>
+</html>
