@@ -10,14 +10,13 @@ import jakarta.persistence.InheritanceType;
 /**
  * エンティの基底クラス
  */
-
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class BaseEntity {
 	
+	//IDENTITYはエラー。理由はSpringWebAppDocのドメインモデルと永続化（継承の永続化戦略）
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.TABLE) 
 	protected Long id;
 
 	public Long getId() {
