@@ -6,10 +6,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
+	
 
 	@GetMapping({"/", "home"})
 	public ModelAndView showHome(ModelAndView mav) {
 		mav.addObject("SystemName", "取引銀行管理");
+		mav.setViewName("home");
+		return mav;
+	}
+	
+	@GetMapping({"data/test"})
+	public ModelAndView showTestData(ModelAndView mav) {
+		mav.addObject("SystemName", "取引銀行管理（テストデータ）");		
 		mav.setViewName("home");
 		return mav;
 	}
