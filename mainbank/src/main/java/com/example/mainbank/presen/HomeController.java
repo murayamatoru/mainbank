@@ -10,15 +10,15 @@ public class HomeController {
 
 	@GetMapping({"/", "home"})
 	public ModelAndView showHome(ModelAndView mav) {
-		mav.addObject("SystemName", "取引銀行管理");
+		mav.addObject("Title", "取引銀行管理");
 		mav.setViewName("home");
 		return mav;
 	}
 	
-	@GetMapping({"data/test"})
-	public ModelAndView showTestData(ModelAndView mav) {
-		mav.addObject("SystemName", "取引銀行管理（テストデータ）");		
-		mav.setViewName("home");
+	@GetMapping({"test/data/create"})
+	public ModelAndView createTestData(ModelAndView mav) {
+		mav.addObject("Title", "取引銀行管理（テストデータ作成結果）");		
+		mav.setViewName("test/data/creation-result");
 		return mav;
 	}
 }
