@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+    /* 全体スクロールバーを非表示に */
+    body {
+        overflow: hidden;
+        margin: 0;
+    }
+
+    /* ページに余白を追加 */
+    .page {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        /* height: 100vh - 40px); */ /* 余白分だけ高さを調整 */
+        height: 100vh; /* 余白分の高さ調整は不要*/
+       padding: 20px; /* 周囲に余白を追加 */
+        box-sizing: border-box; /* paddingを含めてサイズを計算 */
+        background-color: red; /* #f5f5f5; */ /* 余白部分の背景色（必要に応じて変更） */
+    }
+
+    .main {
+        overflow-y: auto;
+        background-color: White;
+    }
+    
+    .main table {
+        width: 900px;
+    }
+
+    header,footer {
+        padding: 1em;
+        background: #aaa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* テーブルのスタイル設定 */
+    .main table {
+        border-collapse: collapse;
+        /* width: 100%; */
+        width: 900px;
+    }
+    .main th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+        background-color: pink;
+    }
+    .main th {
+        background: LightGreen;
+    }
