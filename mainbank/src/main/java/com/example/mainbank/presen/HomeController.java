@@ -30,9 +30,13 @@ public class HomeController {
 	public ModelAndView createTestData(ModelAndView mav) {
 		mav.addObject("Title", "取引銀行管理（テストデータ作成結果）");
 		
-		MainBank  mainBank = new MainBank();
-		mainBank.setName("福岡銀行");
-		this.mainBankService.addMainMank(mainBank);
+		MainBank  mb1 = new MainBank();
+		mb1.setName("福岡銀行");
+		this.mainBankService.addMainMank(mb1);
+		
+		MainBank  mb2 = new MainBank();
+		mb2.setName("西日本シティ銀行");
+		this.mainBankService.addMainMank(mb2);
 		
 		mav.setViewName("test/data/creation-result");
 		return mav;
