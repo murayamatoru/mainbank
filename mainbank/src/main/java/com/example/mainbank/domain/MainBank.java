@@ -1,5 +1,7 @@
 package com.example.mainbank.domain;
 
+import java.util.HashMap;
+
 import jakarta.persistence.Entity;
 
 /**
@@ -15,12 +17,21 @@ public class MainBank extends BaseEntity {
 		ネット銀行
 	}
 	
+	/** 銀行種類Map & イニシアライザ */
+	public static HashMap<String, String> categoryMap;
+	{
+		categoryMap = new HashMap<String, String>();
+		categoryMap.put(Category.都市銀行.name(), String.valueOf(Category.都市銀行.ordinal()));
+		categoryMap.put(Category.地方銀行.name(), String.valueOf(Category.地方銀行.ordinal()));
+		categoryMap.put(Category.ネット銀行.name(), String.valueOf(Category.ネット銀行.ordinal()));
+	}
+
+	
 	/** 銀行名 */
 	private String name;
 	
 	/** 銀行種類 */
 	private Category bankCategory;
-
 
 	//コンストラクタ
 	public MainBank(String name, Category category) {
@@ -31,6 +42,14 @@ public class MainBank extends BaseEntity {
 	//コンストラクタ
 	public MainBank() {
 		this.name = "";
+	}
+
+	public HashMap<String, String> getCategoryMap() {
+		return categoryMap;
+	}
+
+	public void setCategoryMap(HashMap<String, String> categoryMap) {
+		this.categoryMap = categoryMap;
 	}
 
 	public String getName() {
