@@ -5,14 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.mainbank.domain.MainBank;
-import com.example.mainbank.usecase.MainBankService;
+import com.example.mainbank.usecase.TestDataService;
 
 @Controller
 public class HomeController {
 	
 	@Autowired
-	private MainBankService mainBankService;
+	private TestDataService testDataService;
 
 	@GetMapping({"/", "home"})
 	public ModelAndView showHome(ModelAndView mav) {
@@ -30,16 +29,8 @@ public class HomeController {
 	public ModelAndView createTestData(ModelAndView mav) {
 		mav.addObject("Title", "取引銀行管理（テストデータ作成結果）");
 		
-		MainBank  mb1 = new MainBank("福岡銀行", MainBank.Category.地方銀行);
-		this.mainBankService.addMainMank(mb1);
+		this.testDataService.createTestData();
 		
-		MainBank  mb2 = new MainBank("西日本シティ銀行", MainBank.Category.地方銀行);
-		this.mainBankService.addMainMank(mb2);
-		
-		MainBank  mb3 = new MainBank("みんなの銀行", MainBank.Category.ネット銀行);
-		this.mainBankService.addMainMank(mb3);
-
-		mav.setViewName("test/data/creation-result");
 		return mav;
 	}
 }
