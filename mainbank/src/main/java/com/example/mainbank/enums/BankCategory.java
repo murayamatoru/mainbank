@@ -20,6 +20,10 @@ public enum BankCategory implements Serializable {
 	public String getValue() {
 		return value;
 	}
+	
+	public String toString() {
+		return this.value;
+	}
 
 
 	
