@@ -3,6 +3,7 @@ package com.example.mainbank.domain;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 
 /**
  * 取引銀行
@@ -11,6 +12,7 @@ import jakarta.persistence.Entity;
 public class MainBank extends BaseEntity {
 	
 	/** 銀行 */
+	@ManyToOne
 	private Bank bank;
 	
 	/** 取引開始日 */

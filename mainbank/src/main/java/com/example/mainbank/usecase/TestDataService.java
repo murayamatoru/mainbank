@@ -1,11 +1,14 @@
 package com.example.mainbank.usecase;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.mainbank.domain.Bank;
 import com.example.mainbank.domain.MainBank;
+import com.example.mainbank.domain.repository.BankRepository;
 import com.example.mainbank.domain.repository.MainBankRepository;
 import com.example.mainbank.enums.BankCategory;
 /**
@@ -13,6 +16,9 @@ import com.example.mainbank.enums.BankCategory;
  */
 @Service
 public class TestDataService {
+
+	@Autowired
+	private BankRepository bankRepository;
 
 	@Autowired
 	private MainBankRepository mainBankRepository;
@@ -24,10 +30,18 @@ public class TestDataService {
 	
 	@Transactional
 	public boolean createTestData() {
-		Bank b1 =  new Bank("三菱UFJ銀行", BankCategory.都市銀行);
-		MainBank mb1 = new MainBank(b1);
+		Bank bank1 =  new Bank("三菱UFJ銀行", BankCategory.都市銀行);
+		this.bankRepository.save(bank1);
 		
-		this.mainBankRepository.save(mb1);
+		MainBank mainBank1 = new MainBank(bank1);
+		mainBank1.setStartDate(LocalDate.now());
+		bank1.addMainBank(mainBank1);
+		this.mainBankRepository.save(mainBank1);
+		
+		
+		String sss = mainBank1.getBank().getCategory().toString();
+		sss += "1";
+		
 		return true;
 	}
 }
