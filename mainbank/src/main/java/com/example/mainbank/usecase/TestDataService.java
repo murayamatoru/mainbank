@@ -30,17 +30,13 @@ public class TestDataService {
 	
 	@Transactional
 	public boolean createTestData() {
-		Bank bank1 =  new Bank("三菱UFJ銀行", BankCategory.都市銀行);
+		Bank bank1 =  new Bank("三菱UFJ銀行", BankCategory.都銀);
 		this.bankRepository.save(bank1);
 		
 		MainBank mainBank1 = new MainBank(bank1);
 		mainBank1.setStartDate(LocalDate.now());
 		bank1.addMainBank(mainBank1);
 		this.mainBankRepository.save(mainBank1);
-		
-		
-		String sss = mainBank1.getBank().getCategory().toString();
-		sss += "1";
 		
 		return true;
 	}

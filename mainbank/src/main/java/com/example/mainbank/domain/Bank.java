@@ -8,6 +8,7 @@ import com.example.mainbank.enums.BankCategory;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToMany;
 
@@ -22,7 +23,7 @@ public class Bank extends BaseEntity {
 	private String name = "";
 	
 	/** 銀行分類 */
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private BankCategory  category;
 	
 	@OneToMany(mappedBy="bank", cascade=CascadeType.ALL, orphanRemoval=true)
@@ -69,5 +70,19 @@ public class Bank extends BaseEntity {
 	public void setMainBankList(List<MainBank> mainBankList) {
 		this.mainBankList = mainBankList;
 	}
-
 }
+
+/*
+列挙型のマッピングについて
+@Enumeratedで指定できる値は，次のどちらかの値です。
+(1) EnumType.ORDINAL：数値型 ordinal()値で登録される
+(2) EnumType.STRING：文字列型 name()値で登録される
+もし(1)(2)以外を使いたい場合（例：都市銀行ではなく都銀）は
+@Enumeratedではなく@Convertとして
+AttributeConverterを実装し、
+テーブルスキーマを変更（ALTER TABLE ...）
+する必要がある。
+Hibernateによるスキーマ自動更新だけでは更新できなくなる。（ALTER TABLE ...）
+また(1) は列挙型の名前の定義順で変動するがあるので既存データとの不整合がおきるリスクがある。
+(2) が最も良い選択と思われる。
+ */

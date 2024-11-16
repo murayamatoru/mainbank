@@ -29,8 +29,7 @@ public class HomeController {
 	public ModelAndView createTestData(ModelAndView mav) {
 		mav.addObject("Title", "取引銀行管理（テストデータ作成結果）");
 		
-		boolean esult = this.testDataService.createTestData();
-		
+		boolean result = this.testDataService.createTestData();
 		mav.setViewName("test/data/created");
 		
 		return mav;
