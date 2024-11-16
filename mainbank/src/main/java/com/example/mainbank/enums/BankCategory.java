@@ -6,27 +6,10 @@ import java.io.Serializable;
  * 銀行分類
  */
 public enum BankCategory implements Serializable {
-
-	都市銀行("都"), 
-	地方銀行("地"), 
-	ネット銀行("ネ");
-
-	private String value;
-	
-	BankCategory(String value){
-		this.value  = value;
-	}
-
-	public String getValue() {
-		return value;
-	}
-	
-	public String toString() {
-		return this.value;
-	}
-
-
-	
+	都銀, 
+	地銀, 
+	ネット;
+}	
 	
 //	/**
 //	 * 銀行分類（列挙型）
@@ -57,6 +40,3 @@ public enum BankCategory implements Serializable {
 //		}
 //		
 //	}
-
-
-}

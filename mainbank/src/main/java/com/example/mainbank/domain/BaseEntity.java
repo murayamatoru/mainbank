@@ -1,6 +1,10 @@
 package com.example.mainbank.domain;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +24,12 @@ public abstract class BaseEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE) 
 	protected Long id;
+
+	@CreatedDate
+	protected LocalDate createdDate;
+	
+	@LastModifiedDate
+	protected LocalDate mlastModifiedDate;
 
 	public Long getId() {
 		return id;
