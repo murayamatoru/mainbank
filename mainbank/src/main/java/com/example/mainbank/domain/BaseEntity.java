@@ -1,7 +1,7 @@
 package com.example.mainbank.domain;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -26,10 +26,10 @@ public abstract class BaseEntity implements Serializable {
 	protected Long id;
 
 	@CreatedDate
-	protected LocalDate createdDate;
+	protected LocalDateTime createdDate;
 	
 	@LastModifiedDate
-	protected LocalDate mlastModifiedDate;
+	protected LocalDateTime mlastModifiedDate;
 
 	public Long getId() {
 		return id;
@@ -38,4 +38,22 @@ public abstract class BaseEntity implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public LocalDateTime getMlastModifiedDate() {
+		return mlastModifiedDate;
+	}
+
+	public void setMlastModifiedDate(LocalDateTime mlastModifiedDate) {
+		this.mlastModifiedDate = mlastModifiedDate;
+	}
+
+	
 }
