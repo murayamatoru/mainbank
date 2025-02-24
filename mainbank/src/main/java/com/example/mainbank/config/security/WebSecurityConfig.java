@@ -7,9 +7,9 @@ import lombok.RequiredArgsConstructor;
  
 /**
  * Spring Securityの設定を行うクラス。
- * 1,ConfigurationとEnableWebSecurityアノテーションを付ける
- * 2,SecurityFilterChainを返すメソッドにBeanアノテーションを付ける
- * の2つが必要。
+ * 1. ConfigurationとEnableWebSecurityアノテーションを付ける
+ * 2. SecurityFilterChainを返すメソッドにBeanアノテーションを付ける
+ * 上記の2つが必要。
  * パスワードをハッシュ化する場合は
  * 3.PasswordEncoderを返すメソッドにBeanアノテーションを付ける
  * も行う必要あり。
