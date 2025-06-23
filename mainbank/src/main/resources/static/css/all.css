@@ -14,7 +14,7 @@
         height: 100vh; /* 余白分の高さ調整は不要*/
        padding: 20px; /* 周囲に余白を追加 */
         box-sizing: border-box; /* paddingを含めてサイズを計算 */
-        background-color: darkgreen; /* #f5f5f5; */ /* 余白部分の背景色（必要に応じて変更） */
+        background-color: black; /* #f5f5f5; */ /* 余白部分の背景色（必要に応じて変更） */
     }
 
     .main {
@@ -26,13 +26,21 @@
         width: 900px;
     }
 
-    header,footer {
+    .header {
         padding: 1em;
         background: #aaa;
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
+	.footer {
+	    padding: 1em;
+	    background: #aaa;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	}
 
     /* テーブルのスタイル設定 */
     .main table {
