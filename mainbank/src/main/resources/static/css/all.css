@@ -84,6 +84,22 @@
 		}
 	
 		.ActionBtn:focus {
-		  outline: 2px dashed red; /* フォーカス時に太さ2ピクセルの赤の点線アウトライン */
+		  outline: 4px dashed red; /* フォーカス時に太さ2ピクセルの赤の点線アウトライン */
 		}
 	}
+	
+/* 
+上のコードはネストCSSを使った書き方でありW3Cの検証ツールではエラーになる可能性がある。
+ブラウザでは期待通りに動く。2025.6 Windows10 最新 Chrome
+CSS純粋の書き方にする場合は、以下のように書く。
+.footer .ActionBtn {
+	outline: 2px solid blue;
+	padding: 10px 20px;
+	border: none;
+}
+.footer .ActionBtn:focus {
+	outline: 2px dashed red;
+}
+/*
+
+*/
