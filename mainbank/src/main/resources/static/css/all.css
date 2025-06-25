@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+	/*
+	(1) ダークモード
+	(2) 目的が違うセレクタ
+	セレクタにはGridLayoutの場所を指定するような情報と、見栄えを指定数るような情報がある。
+	混在させずに分けた方が良さそうだ。
+	*/
+	
     /* 全体スクロールバーを非表示に */
     body {
         overflow: hidden;
@@ -19,7 +26,7 @@
 
     .main {
         overflow-y: auto;
-        background-color: White;
+        background-color: yellow;
     }
     
     .main table {
@@ -63,6 +70,20 @@
         text-align: left;
         background-color: pink;
     }
+	
+	/*
     .main th {
         background: LightGreen;
     }
+	*/
+	.footer {
+		.ActionBtn {
+		  outline: 2px solid blue; /* 太さ2ピクセルの青い実線アウトライン */
+		  padding: 10px 20px; /* ボタンのpadding */
+		  border: none; /* borderを削除 */
+		}
+	
+		.ActionBtn:focus {
+		  outline: 2px dashed red; /* フォーカス時に太さ2ピクセルの赤の点線アウトライン */
+		}
+	}
