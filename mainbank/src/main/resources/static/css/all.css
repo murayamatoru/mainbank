@@ -71,20 +71,16 @@
         background-color: pink;
     }
 	
-	/*
-    .main th {
-        background: LightGreen;
-    }
-	*/
 	.footer {
 		.ActionBtn {
+          border-radius: 100px;  /*  角丸*/
 		  outline: 2px solid blue; /* 太さ2ピクセルの青い実線アウトライン */
 		  padding: 10px 20px; /* ボタンのpadding */
 		  border: none; /* borderを削除 */
 		}
 	
-		.ActionBtn:focus {
-		  outline: 4px dashed red; /* フォーカス時に太さ2ピクセルの赤の点線アウトライン */
+		.ActionBtn:hover {
+		  outline: 2px dashed white; /* フォーカス時に太さ2ピクセルの赤の点線アウトライン */
 		}
 	}
 	
