@@ -1,4 +1,31 @@
 @charset "UTF-8";
 
-
+    .MainBankList {
+		grid-row: 2;
+		grid-column: 1;
+        overflow-y: auto;
+        background-color: white;
+    }
+    
+    /* テーブルのスタイル設定 */
+    .MainBankList table {
+        border-collapse: collapse;
+        /* width: 100%; */
+        width: 900px;
+    }
 	
+	.MainBankList thead th {
+		position: sticky;
+		top: 0;
+		background-color: black;
+		color: white;
+		z-index: 1;
+		box-shadow: 0px 2px 0px black;	}
+	
+    .MainBankList th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+        background-color: pink;
+    }
+

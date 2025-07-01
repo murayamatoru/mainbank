@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
     .header {
-        padding: 1em;
+		grid-row: 1;
+		grid-column: 1;
+      padding: 1em;
         background: #aaa;
         display: flex;
         justify-content: center;
