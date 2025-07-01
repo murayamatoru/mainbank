@@ -9,10 +9,10 @@
     /* ページに余白を追加 */
     .page {
         display: grid;
-        grid-template-rows: auto 1fr auto;
-        /* height: 100vh - 40px); */ /* 余白分だけ高さを調整 */
+        grid-template-rows: auto 1fr auto; /* 3行 */
+		grid-template-columns: 1fr; /* 1列 */
         height: 100vh; /* 余白分の高さ調整は不要*/
-       padding: 20px; /* 周囲に余白を追加 */
+        padding: 20px; /* 周囲に余白を追加 */
         box-sizing: border-box; /* paddingを含めてサイズを計算 */
         background-color: black; /* #f5f5f5; */ /* 余白部分の背景色（必要に応じて変更） */
     }
