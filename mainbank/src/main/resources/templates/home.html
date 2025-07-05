@@ -14,11 +14,17 @@
 </style>
 </head>
 <body>
-<div class="page">
-    <header class="header">
+<div class="Page">
+    <header class="Header">
+		ここはヘッダーです　
         <span th:text="${Title}"></span>
-        </a>
     </header>
+	
+	<div class="Menu">
+		ここはメニューです
+	</div>
+	
+	
     <div class="MainBankList">
         <div>
             <table class="table">
@@ -60,10 +66,10 @@
             </table>
         </div>
     </div>
-    <footer class="footer">
+    <Footer class="Footer">
         ここはフッターです　
-		<a class="ActionBtn" th:href="@{/test/data/create}">テストデータ作成
-    </footer>
+		<a class="ActionBtn" th:href="@{/test/data/create}">テストデータ作成</a>
+    </Footer>
 </div>
 </body>
 </html>

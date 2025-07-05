@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-	.footer {
-		grid-row: 3;
+	.Footer {
+		grid-row: 4;
 		grid-column: 1;
 	    padding: 1em;
 	    background: #aaa;
@@ -10,7 +10,7 @@
 	    align-items: center;
 	}
 
-	.footer {
+	.Footer {
 		.ActionBtn {
           border-radius: 100px;  /*  角丸*/
 		  outline: 2px solid blue; /* 太さ2ピクセルの青い実線アウトライン */
