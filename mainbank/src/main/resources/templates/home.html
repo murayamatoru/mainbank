@@ -11,6 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title th:text="取引銀行管理"></title>
 <style>
+	/* 共通リセット */
+	ul, li {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}	
 </style>
 </head>
 <body>
@@ -20,9 +26,34 @@
         <span th:text="${Title}"></span>
     </header>
 	
-	<div class="Menu">
-		ここはメニューです
-	</div>
+	<div class="">
+		<span style="color: white">ここはメニューです</span>
+		<ul class="Menu">
+		  <li>
+		    <a href="#">Menu</a>
+		    <ul>
+		      <li>
+		        <a href="#" class="init-right">Submenu 1</a>
+		        <ul>
+		          <li>
+		            <a href="#" class="init-right">Sub-Submenu 1</a>
+		            <ul>
+		              <li><a href="#">Item 1</a></li>
+		              <li><a href="#">Item 2</a></li>
+		              <li><a href="#">Item 3</a></li>
+		            </ul>
+		          </li>
+		          <li><a href="#">Sub-Submenu 2</a></li>
+		          <li><a href="#">Sub-Submenu 3</a></li>
+		        </ul>
+		      </li>
+		      <li><a href="#">Submenu 2</a></li>
+		    </ul>
+		  </li>
+		  <li><a href="#">About</a></li>
+		  <li><a href="#">Contact</a></li>
+		</ul>
+		</div>
 	
 	
     <div class="MainBankList">
