@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 .Menu {
+	grid-row: 2;
+	grid-column: 1;
+	padding: 1em;
   background: #004d40;
   display: flex;
 }
