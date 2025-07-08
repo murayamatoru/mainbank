@@ -26,34 +26,8 @@
         <span th:text="${Title}"></span>
     </header>
 	
-	<div> <!-- このdivを取り除くと表の縦横スクロールが出なくなる？-->
-		<ul class="Menu">
-		  <li>
-		    <a href="#">Menu</a>
-		    <ul>
-		      <li>
-		        <a href="#" class="init-right">Submenu 1</a>
-		        <ul>
-		          <li>
-		            <a href="#" class="init-right">Sub-Submenu 1</a>
-		            <ul>
-		              <li><a href="#">Item 1</a></li>
-		              <li><a href="#">Item 2</a></li>
-		              <li><a href="#">Item 3</a></li>
-		            </ul>
-		          </li>
-		          <li><a href="#">Sub-Submenu 2</a></li>
-		          <li><a href="#">Sub-Submenu 3</a></li>
-		        </ul>
-		      </li>
-		      <li><a href="#">Submenu 2</a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#">About</a></li>
-		  <li><a href="#">Contact</a></li>
-		</ul>
-		</div>
-	
+<!-- メニュー部をインサート -->
+<div th:insert="fragments/menu :: mainMenu"></div>
 	
     <div class="MainBankList">
         <div>
