@@ -1,4 +1,16 @@
 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- ここまではHTML構文チェックでエラーとならないためのコード -->
+<!-- しかし、thymeleaf 関係は動的な仕組みのため静的なチェックツールではエラーとなると思われる 2025.7.9 -->
+
+
 <!-- fragments/menu.html -->
 <div th:fragment="mainMenu">
 <div> <!-- このdivを取り除くと表の縦横スクロールが出なくなる？-->
@@ -29,3 +41,8 @@
 	</ul>
 </div>
 </div>
+
+
+<!-- この下はHTML構文チェックでエラーとならないためのコード -->
+</body>
+</html>
