@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
     .MainBankList {
-		grid-row: 3;
-		grid-column: 1;
         overflow-y: auto;
         background-color: white;
     }
@@ -12,6 +10,7 @@
         border-collapse: collapse;
         /* width: 100%; */
         width: 900px;
+		height: 200px;
     }
 	
 	.MainBankList thead th {

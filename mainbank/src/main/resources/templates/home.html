@@ -29,6 +29,7 @@
 <!-- メニュー部をインサート -->
 <div th:insert="fragments/menu :: mainMenu"></div>
 	
+<div class="Main">
     <div class="MainBankList">
         <div>
             <table class="table">
@@ -70,6 +71,8 @@
             </table>
         </div>
     </div>
+	</div>
+	
     <Footer class="Footer">
         ここはフッターです　
 		<a class="ActionBtn" th:href="@{/test/data/create}">テストデータ作成</a>

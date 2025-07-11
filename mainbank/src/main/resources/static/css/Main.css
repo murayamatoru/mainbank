@@ -1,29 +1,10 @@
 @charset "UTF-8";
 
-    .main {
-        overflow-y: auto;
+    .Main {
+		grid-row: 3;
+		grid-column: 1;
+        /*overflow-y: auto; */ /* MainBankList に指定する */
         background-color: white;
+	   display: block;
     }
-    
-    /* テーブルのスタイル設定 */
-    .main table {
-        border-collapse: collapse;
-        /* width: 100%; */
-        width: 900px;
-    }
-	
-	.main thead th {
-		position: sticky;
-		top: 0;
-		background-color: black;
-		color: white;
-		z-index: 1;
-		box-shadow: 0px 2px 0px black;	}
-	
-    .main th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-        background-color: pink;
-    }
-
+   
