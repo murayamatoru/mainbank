@@ -1,72 +1,66 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
 </head>
 <body>
-
 <!-- ここまではHTML構文チェックでエラーとならないためのコード -->
-<!-- しかし、thymeleaf 関係は動的な仕組みのため静的なチェックツールではエラーとなると思われる 2025.7.9 -->
+<!-- しかし、thymeleaf 関係は動的な仕組みのため静的なチェックツールではエラーとなる 2025.7.9 -->
 
-
-<!-- fragments/menu.html -->
-<div th:fragment="mainMenu">
-<div> <!-- このdivを取り除くと表の縦横スクロールが出なくなる？-->
-	<ul class="Menu">
-	  <li>
-	    <a href="#">取引銀行</a>
-	    <ul>
-	      <li>
-	        <a href="#" class="init-right">一覧</a>
-	        <ul>
-	          <li>
-	            <a href="#" class="init-right">Sub-Submenu 1</a>
-	            <ul>
-	              <li><a href="#">Item 1</a></li>
-	              <li><a href="#">Item 2</a></li>
-	            </ul>
-	          </li>
-	          <li><a href="#">Sub-Submenu 2</a></li>
-	        </ul>
-	      </li>
-	      <li><a href="#">Submenu 2</a></li>
-	    </ul>
-	  </li>
-	  <li>
-		<a href="#">システム管理</a>
-		<ul>
-		  <li>
-		    <a href="#" class="init-right">金融機関</a>
-		    <ul>
-		      <li>
-		        <a href="#">一覧</a>
-		      </li>
-		      <li>
-				<a href="#">追加</a>
-			</li>
-		    </ul>
-		  </li>
-		  <li>
-			<a href="#" class="init-right">社内部門</a>
-			<ul>
-			  <li>
-			    <a href="#">一覧</a>
-			  </li>
-			  <li>
-				<a href="#">追加</a>
-			</li>
+	<!-- fragments/menu.html -->
+	<div th:fragment="mainMenu">
+		<div> <!-- このdivを取り除くと表の縦横スクロールが出なくなる？-->
+			<ul class="Menu">
+				<li>
+					<a href="#">取引銀行</a>
+					<ul>
+						<li>
+							<a href="#" class="init-right">一覧</a>
+							<ul>
+								<li>
+									<a href="#" class="init-right">利用可能リスト</a>
+									<ul>
+										<li><a href="#">名称のみ</a></li>
+										<li><a href="#">すべて</a></li>
+									</ul>
+								</li>
+								<li><a href="#">利用休止中リスト</a></li>
+							</ul>
+						</li>
+						<li><a href="#">新規登録</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">システム管理</a>
+					<ul>
+						<li>
+							<a href="#" class="init-right">金融機関</a>
+							<ul>
+								<li>
+									<a href="#">一覧</a>
+								</li>
+								<li>
+									<a href="#">追加</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="init-right">利用部門</a>
+							<ul>
+								<li>
+									<a href="#">一覧</a>
+								</li>
+								<li>
+									<a href="#">追加</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
 			</ul>
-
-		</li>
-		</ul>
-	</li>
-	</ul>
-</div>
-</div>
-
-
+		</div>
+	</div>
 <!-- この下はHTML構文チェックでエラーとならないためのコード -->
 </body>
 </html>
