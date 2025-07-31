@@ -10,8 +10,8 @@
     /* テーブルのスタイル設定 */
     .MainBankList table {
         border-collapse: collapse;
-        /* width: 100%; */
         width: 100%;
+        min-width: 500px;
     }
 	
 	.MainBankList thead th {
