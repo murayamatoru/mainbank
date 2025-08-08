@@ -33,14 +33,14 @@
         <div>
             <table class="table">
                 <thead>
-                    <tr>
-						<th>目的</th>
-						<th>利用部署</th>
-                        <th>金融機関名</th>
-                        <th>支店名</th>
-                        <th>口座番号</th>
-                        <th>残高</th>
-                    </tr>
+					<tr>
+					  <th onclick="sortTable(0)">目的</th>
+					  <th onclick="sortTable(1)">利用部署</th>
+					  <th onclick="sortTable(2)">金融機関名</th>
+					  <th onclick="sortTable(3)">支店名</th>
+					  <th onclick="sortTable(4)">口座番号</th>
+					  <th onclick="sortTable(5)">残高</th>
+					</tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -86,5 +86,48 @@
 		<a class="ActionBtn" th:href="@{/test/data/create}">テストデータ作成</a>
     </Footer>
 </div>
+
+<script>
+let sortDirection = {}; // 列ごとのソート方向を保持
+
+function sortTable(columnIndex) {
+    const table = document.querySelector(".MainBankList table");
+    const tbody = table.querySelector("tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    // 昇順/降順の切り替え
+    const direction = sortDirection[columnIndex] === "asc" ? "desc" : "asc";
+    sortDirection[columnIndex] = direction;
+
+    // 日本円用の変換関数
+    const parseYen = (text) => {
+        return parseFloat(text.replace(/[,円.]/g, "") || "0");
+    };
+
+    // ソートロジック
+    rows.sort((a, b) => {
+        const aText = a.children[columnIndex].textContent.trim();
+        const bText = b.children[columnIndex].textContent.trim();
+
+        let aVal, bVal;
+
+        if (columnIndex === 5) { // 残高列（6列目）
+            aVal = parseYen(aText);
+            bVal = parseYen(bText);
+        } else {
+            aVal = aText.toLowerCase();
+            bVal = bText.toLowerCase();
+        }
+
+        if (aVal < bVal) return direction === "asc" ? -1 : 1;
+        if (aVal > bVal) return direction === "asc" ? 1 : -1;
+        return 0;
+    });
+
+    // tbody に再追加
+    rows.forEach(row => tbody.appendChild(row));
+}
+</script>
+
 </body>
 </html>
