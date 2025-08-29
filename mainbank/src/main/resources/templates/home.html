@@ -34,12 +34,12 @@
             <table class="table">
                 <thead>
 					<tr>
-					  <th onclick="sortTable(0)">使用目的</th>
-					  <th onclick="sortTable(1)">責任部署</th>
-					  <th onclick="sortTable(2)">銀行</th>
-					  <th onclick="sortTable(3)">支店</th>
-					  <th onclick="sortTable(4)">口座番号</th>
-					  <th onclick="sortTable(5)">残高</th>
+					  <th onclick="sortTable(0)">使用目的<span class="sort-arrow"></span></th>
+					  <th onclick="sortTable(1)">責任部署<span class="sort-arrow"></span></th>
+					  <th onclick="sortTable(2)">銀行<span class="sort-arrow"></span></th>
+					  <th onclick="sortTable(3)">支店<span class="sort-arrow"></span></th>
+					  <th onclick="sortTable(4)">口座番号<span class="sort-arrow"></span></th>
+					  <th onclick="sortTable(5)">残高<span class="sort-arrow"></span></th>
 					</tr>
                 </thead>
                 <tbody>
@@ -89,28 +89,23 @@
 
 <script>
 let sortDirection = {}; // 列ごとのソート方向を保持
-
 function sortTable(columnIndex) {
     const table = document.querySelector(".MainBankList table");
     const tbody = table.querySelector("tbody");
     const rows = Array.from(tbody.querySelectorAll("tr"));
-
+    const headers = table.querySelectorAll("thead th");
     // 昇順/降順の切り替え
     const direction = sortDirection[columnIndex] === "asc" ? "desc" : "asc";
     sortDirection[columnIndex] = direction;
-
     // 日本円用の変換関数
     const parseYen = (text) => {
         return parseFloat(text.replace(/[,円.]/g, "") || "0");
     };
-
-    // ソートロジック
+    // ソート処理
     rows.sort((a, b) => {
         const aText = a.children[columnIndex].textContent.trim();
         const bText = b.children[columnIndex].textContent.trim();
-
         let aVal, bVal;
-
         if (columnIndex === 5) { // 残高列（6列目）
             aVal = parseYen(aText);
             bVal = parseYen(bText);
@@ -118,14 +113,25 @@ function sortTable(columnIndex) {
             aVal = aText.toLowerCase();
             bVal = bText.toLowerCase();
         }
-
         if (aVal < bVal) return direction === "asc" ? -1 : 1;
         if (aVal > bVal) return direction === "asc" ? 1 : -1;
         return 0;
     });
-
     // tbody に再追加
     rows.forEach(row => tbody.appendChild(row));
+
+    // 矢印の更新処理
+    headers.forEach((th, i) => {
+        const arrow = th.querySelector(".sort-arrow");
+        if (!arrow) return;
+        if (i === columnIndex) {
+            arrow.textContent = direction === "asc" ? "▲" : "▼";
+            arrow.classList.add("active");
+        } else {
+            arrow.textContent = "";
+            arrow.classList.remove("active");
+        }
+    });
 }
 </script>
 
