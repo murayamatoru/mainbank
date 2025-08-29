@@ -15,7 +15,7 @@ public class HomeController {
 
 	@GetMapping({"/", "home"})
 	public ModelAndView showHome(ModelAndView mav) {
-		mav.addObject("Title", "取引銀行管理");
+		mav.addObject("Title", "取引銀行管理システム");
 		mav.setViewName("home");
 		return mav;
 	}
