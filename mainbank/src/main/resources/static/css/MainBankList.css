@@ -29,3 +29,15 @@
         background-color: pink;
     }
 
+	/* 矢印の共通スタイル */
+	.sort-arrow {
+	    margin-left: 5px;
+	    font-size: 0.8em;
+	    color: lightgray; /* デフォルトは薄い色 */
+	    transition: color 0.2s ease;
+	}
+	/* アクティブ列の矢印 */
+	.sort-arrow.active {
+	    color: white; /* ヘッダー背景が黒なので白で目立たせる */
+	    font-weight: bold;
+	}
