@@ -7,9 +7,9 @@ import java.util.HashMap;
  * 銀行分類
  */
 public enum BankCategory implements Serializable {
-	都銀("A"), 
-	地銀("B"), 
-	ネット("C");
+	都市銀行("都銀"), 
+	地方銀行("地銀"), 
+	ネット銀行("ネット");
 
 	private final String stringValue;
 

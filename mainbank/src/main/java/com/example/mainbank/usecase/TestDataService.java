@@ -31,7 +31,7 @@ public class TestDataService {
 	
 	@Transactional
 	public boolean createTestData() {
-		Bank bk1 =  new Bank("三菱UFJ銀行", BankCategory.都銀);
+		Bank bk1 =  new Bank("三菱UFJ銀行", BankCategory.都市銀行);
 		this.bankRepository.save(bk1);
 		
 		MainBank mb1 = new MainBank(bk1);
