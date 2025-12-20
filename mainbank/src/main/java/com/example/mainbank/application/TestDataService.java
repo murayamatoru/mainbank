@@ -1,4 +1,4 @@
-package com.example.mainbank.usecase;
+package com.example.mainbank.application;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.mainbank.domain.Bank;
-import com.example.mainbank.domain.MainBank;
+import com.example.mainbank.domain.model.Bank;
+import com.example.mainbank.domain.model.MainBank;
+import com.example.mainbank.domain.model.enums.BankCategory;
 import com.example.mainbank.domain.repository.BankRepository;
 import com.example.mainbank.domain.repository.MainBankRepository;
-import com.example.mainbank.enums.BankCategory;
 /**
  * テストデータサービス
  */

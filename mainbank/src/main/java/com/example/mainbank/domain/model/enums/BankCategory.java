@@ -1,4 +1,4 @@
-package com.example.mainbank.enums;
+package com.example.mainbank.domain.model.enums;
 
 import java.io.Serializable;
 import java.util.HashMap;

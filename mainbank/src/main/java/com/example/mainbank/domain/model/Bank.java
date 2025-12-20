@@ -1,9 +1,7 @@
-package com.example.mainbank.domain;
+package com.example.mainbank.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.example.mainbank.enums.BankCategory;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -11,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToMany;
+
+import com.example.mainbank.domain.model.enums.BankCategory;
 
 /**
  * 銀行

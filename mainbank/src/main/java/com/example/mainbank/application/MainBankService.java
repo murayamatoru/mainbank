@@ -1,9 +1,9 @@
-package com.example.mainbank.usecase;
+package com.example.mainbank.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.mainbank.domain.MainBank;
+import com.example.mainbank.domain.model.MainBank;
 import com.example.mainbank.domain.repository.MainBankRepository;
 
 /**
